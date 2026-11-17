@@ -1,0 +1,20 @@
+--- add a 3s delay to the Payment Service (Checkout timeout is 1s)
+[client] payment service injected delay = 3.0s
+--- three checkout requests
+[client] ORD-4b8975 -> HTTP 504 status=failed trace_id=d54a3f3b latency_ms=1002 error="payment service TIMEOUT after 1.0s"
+[client] ORD-003717 -> HTTP 504 status=failed trace_id=f3a72f74 latency_ms=1002 error="payment service TIMEOUT after 1.0s"
+[client] ORD-bbf453 -> HTTP 504 status=failed trace_id=cddc39db latency_ms=1002 error="payment service TIMEOUT after 1.0s"
+--- both services are still running
+[health] checkout HTTP 200 status=ok
+[health] payment  HTTP 200 status=ok
+--- follow trace_id=d54a3f3b across both services: grep d54a3f3b logs/*_service.log
+18:37:17.371 [checkout] trace_id=d54a3f3b POST /checkout received order_id=ORD-4b8975 amount=25.0
+18:37:17.371 [checkout] trace_id=d54a3f3b calling payment service (timeout=1.0s)
+18:37:17.372 [payment] trace_id=d54a3f3b POST /pay received order_id=ORD-4b8975 amount=25.0
+18:37:17.372 [payment] trace_id=d54a3f3b SLOW: sleeping 3.0s (injected delay)
+18:37:18.373 [checkout] trace_id=d54a3f3b ERROR payment service TIMEOUT after 1.0s
+18:37:18.373 [checkout] trace_id=d54a3f3b POST /checkout FAILED status=504 latency_ms=1002
+18:37:20.422 [payment] trace_id=d54a3f3b POST /pay completed status=200 latency_ms=3050
+--- metrics
+[metrics] checkout requests=4 success=1 failure=3 error_rate=75.0% recent_error_rate=75.0% | latency_ms last=1001.6 avg=765.6 recent_avg=765.6 max=1001.7
+[metrics] payment  requests=4 success=4 failure=0 error_rate=0.0% recent_error_rate=0.0% | latency_ms last=3050.3 avg=2300.3 recent_avg=2300.3 max=3050.4

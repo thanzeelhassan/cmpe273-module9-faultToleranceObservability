@@ -1,0 +1,26 @@
+18:37:16.143 [payment] trace_id=- listening on port 8002
+18:37:17.156 [payment] trace_id=826fa6a3 POST /pay received order_id=ORD-548651 amount=25.0
+18:37:17.206 [payment] trace_id=826fa6a3 POST /pay completed status=200 latency_ms=50
+18:37:17.319 [payment] trace_id=- FAULT INJECTION delay set to 3.0s
+18:37:17.372 [payment] trace_id=d54a3f3b POST /pay received order_id=ORD-4b8975 amount=25.0
+18:37:17.372 [payment] trace_id=d54a3f3b SLOW: sleeping 3.0s (injected delay)
+18:37:18.375 [payment] trace_id=f3a72f74 POST /pay received order_id=ORD-003717 amount=25.0
+18:37:18.375 [payment] trace_id=f3a72f74 SLOW: sleeping 3.0s (injected delay)
+18:37:19.378 [payment] trace_id=cddc39db POST /pay received order_id=ORD-bbf453 amount=25.0
+18:37:19.378 [payment] trace_id=cddc39db SLOW: sleeping 3.0s (injected delay)
+18:37:20.422 [payment] trace_id=d54a3f3b POST /pay completed status=200 latency_ms=3050
+18:37:21.425 [payment] trace_id=f3a72f74 POST /pay completed status=200 latency_ms=3050
+18:37:22.428 [payment] trace_id=cddc39db POST /pay completed status=200 latency_ms=3050
+18:37:23.577 [payment] trace_id=- FAULT INJECTION delay removed
+18:37:23.633 [payment] trace_id=f46f2c71 POST /pay received order_id=ORD-c2c758 amount=25.0
+18:37:23.684 [payment] trace_id=f46f2c71 POST /pay completed status=200 latency_ms=50
+18:37:23.686 [payment] trace_id=97814035 POST /pay received order_id=ORD-08c201 amount=25.0
+18:37:23.736 [payment] trace_id=97814035 POST /pay completed status=200 latency_ms=50
+18:37:23.738 [payment] trace_id=4e24a13a POST /pay received order_id=ORD-ec4b41 amount=25.0
+18:37:23.788 [payment] trace_id=4e24a13a POST /pay completed status=200 latency_ms=50
+18:37:23.791 [payment] trace_id=6e5bc1cc POST /pay received order_id=ORD-01124a amount=25.0
+18:37:23.841 [payment] trace_id=6e5bc1cc POST /pay completed status=200 latency_ms=50
+18:37:23.843 [payment] trace_id=a4d6dd05 POST /pay received order_id=ORD-3e555e amount=25.0
+18:37:23.893 [payment] trace_id=a4d6dd05 POST /pay completed status=200 latency_ms=50
+18:37:23.895 [payment] trace_id=7ba1a03b POST /pay received order_id=ORD-cc587b amount=25.0
+18:37:23.946 [payment] trace_id=7ba1a03b POST /pay completed status=200 latency_ms=50

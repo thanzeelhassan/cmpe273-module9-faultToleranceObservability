@@ -1,0 +1,12 @@
+--- one checkout request
+[client] ORD-548651 -> HTTP 200 status=confirmed trace_id=826fa6a3 latency_ms=57
+--- follow trace_id=826fa6a3 across both services: grep 826fa6a3 logs/*_service.log
+18:37:17.149 [checkout] trace_id=826fa6a3 POST /checkout received order_id=ORD-548651 amount=25.0
+18:37:17.149 [checkout] trace_id=826fa6a3 calling payment service (timeout=1.0s)
+18:37:17.156 [payment] trace_id=826fa6a3 POST /pay received order_id=ORD-548651 amount=25.0
+18:37:17.206 [payment] trace_id=826fa6a3 POST /pay completed status=200 latency_ms=50
+18:37:17.207 [checkout] trace_id=826fa6a3 payment service responded status=200
+18:37:17.207 [checkout] trace_id=826fa6a3 POST /checkout completed status=200 latency_ms=57
+--- metrics
+[metrics] checkout requests=1 success=1 failure=0 error_rate=0.0% recent_error_rate=0.0% | latency_ms last=57.5 avg=57.5 recent_avg=57.5 max=57.5
+[metrics] payment  requests=1 success=1 failure=0 error_rate=0.0% recent_error_rate=0.0% | latency_ms last=50.2 avg=50.2 recent_avg=50.2 max=50.2

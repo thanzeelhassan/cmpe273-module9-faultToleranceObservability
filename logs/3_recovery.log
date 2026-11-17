@@ -1,0 +1,12 @@
+--- remove the Payment Service delay
+[client] payment service injected delay = 0.0s
+--- six checkout requests
+[client] ORD-c2c758 -> HTTP 200 status=confirmed trace_id=f46f2c71 latency_ms=51
+[client] ORD-08c201 -> HTTP 200 status=confirmed trace_id=97814035 latency_ms=51
+[client] ORD-ec4b41 -> HTTP 200 status=confirmed trace_id=4e24a13a latency_ms=51
+[client] ORD-01124a -> HTTP 200 status=confirmed trace_id=6e5bc1cc latency_ms=51
+[client] ORD-3e555e -> HTTP 200 status=confirmed trace_id=a4d6dd05 latency_ms=51
+[client] ORD-cc587b -> HTTP 200 status=confirmed trace_id=7ba1a03b latency_ms=51
+--- metrics
+[metrics] checkout requests=10 success=7 failure=3 error_rate=30.0% recent_error_rate=0.0% | latency_ms last=51.3 avg=337.0 recent_avg=51.3 max=1001.7
+[metrics] payment  requests=10 success=10 failure=0 error_rate=0.0% recent_error_rate=0.0% | latency_ms last=50.2 avg=950.2 recent_avg=50.2 max=3050.4

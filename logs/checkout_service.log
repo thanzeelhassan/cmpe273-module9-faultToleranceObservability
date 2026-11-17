@@ -1,0 +1,41 @@
+18:37:16.143 [checkout] trace_id=- listening on port 8001 (payment=http://localhost:8002, timeout=1.0s)
+18:37:17.149 [checkout] trace_id=826fa6a3 POST /checkout received order_id=ORD-548651 amount=25.0
+18:37:17.149 [checkout] trace_id=826fa6a3 calling payment service (timeout=1.0s)
+18:37:17.207 [checkout] trace_id=826fa6a3 payment service responded status=200
+18:37:17.207 [checkout] trace_id=826fa6a3 POST /checkout completed status=200 latency_ms=57
+18:37:17.371 [checkout] trace_id=d54a3f3b POST /checkout received order_id=ORD-4b8975 amount=25.0
+18:37:17.371 [checkout] trace_id=d54a3f3b calling payment service (timeout=1.0s)
+18:37:18.373 [checkout] trace_id=d54a3f3b ERROR payment service TIMEOUT after 1.0s
+18:37:18.373 [checkout] trace_id=d54a3f3b POST /checkout FAILED status=504 latency_ms=1002
+18:37:18.374 [checkout] trace_id=f3a72f74 POST /checkout received order_id=ORD-003717 amount=25.0
+18:37:18.374 [checkout] trace_id=f3a72f74 calling payment service (timeout=1.0s)
+18:37:19.376 [checkout] trace_id=f3a72f74 ERROR payment service TIMEOUT after 1.0s
+18:37:19.376 [checkout] trace_id=f3a72f74 POST /checkout FAILED status=504 latency_ms=1002
+18:37:19.377 [checkout] trace_id=cddc39db POST /checkout received order_id=ORD-bbf453 amount=25.0
+18:37:19.377 [checkout] trace_id=cddc39db calling payment service (timeout=1.0s)
+18:37:20.379 [checkout] trace_id=cddc39db ERROR payment service TIMEOUT after 1.0s
+18:37:20.379 [checkout] trace_id=cddc39db POST /checkout FAILED status=504 latency_ms=1002
+18:37:23.633 [checkout] trace_id=f46f2c71 POST /checkout received order_id=ORD-c2c758 amount=25.0
+18:37:23.633 [checkout] trace_id=f46f2c71 calling payment service (timeout=1.0s)
+18:37:23.684 [checkout] trace_id=f46f2c71 payment service responded status=200
+18:37:23.684 [checkout] trace_id=f46f2c71 POST /checkout completed status=200 latency_ms=51
+18:37:23.685 [checkout] trace_id=97814035 POST /checkout received order_id=ORD-08c201 amount=25.0
+18:37:23.685 [checkout] trace_id=97814035 calling payment service (timeout=1.0s)
+18:37:23.737 [checkout] trace_id=97814035 payment service responded status=200
+18:37:23.737 [checkout] trace_id=97814035 POST /checkout completed status=200 latency_ms=51
+18:37:23.737 [checkout] trace_id=4e24a13a POST /checkout received order_id=ORD-ec4b41 amount=25.0
+18:37:23.738 [checkout] trace_id=4e24a13a calling payment service (timeout=1.0s)
+18:37:23.789 [checkout] trace_id=4e24a13a payment service responded status=200
+18:37:23.789 [checkout] trace_id=4e24a13a POST /checkout completed status=200 latency_ms=51
+18:37:23.790 [checkout] trace_id=6e5bc1cc POST /checkout received order_id=ORD-01124a amount=25.0
+18:37:23.790 [checkout] trace_id=6e5bc1cc calling payment service (timeout=1.0s)
+18:37:23.841 [checkout] trace_id=6e5bc1cc payment service responded status=200
+18:37:23.841 [checkout] trace_id=6e5bc1cc POST /checkout completed status=200 latency_ms=51
+18:37:23.842 [checkout] trace_id=a4d6dd05 POST /checkout received order_id=ORD-3e555e amount=25.0
+18:37:23.842 [checkout] trace_id=a4d6dd05 calling payment service (timeout=1.0s)
+18:37:23.894 [checkout] trace_id=a4d6dd05 payment service responded status=200
+18:37:23.894 [checkout] trace_id=a4d6dd05 POST /checkout completed status=200 latency_ms=51
+18:37:23.895 [checkout] trace_id=7ba1a03b POST /checkout received order_id=ORD-cc587b amount=25.0
+18:37:23.895 [checkout] trace_id=7ba1a03b calling payment service (timeout=1.0s)
+18:37:23.946 [checkout] trace_id=7ba1a03b payment service responded status=200
+18:37:23.946 [checkout] trace_id=7ba1a03b POST /checkout completed status=200 latency_ms=51
